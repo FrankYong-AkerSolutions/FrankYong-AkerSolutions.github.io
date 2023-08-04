@@ -28,17 +28,24 @@
     <h3><span style="font-family: Arial;">CapMdbCheck</span></h3>
     <h2><span style="font-family: Arial;">Project Settings</span></h2>
     <h2><span style="font-family: Arial;">Development Projects</span></h2>
-    <h3><span style="font-family: Arial;">Project Setting Viewer (CapStart)</span></h3>
+    <h3><a href="file:///E:/Users/email/source/repos/FrankYong-AkerSolutions.github.io/CapStartViewer/CapStart_Viewer.html"><span
+
+          style="font-family: Arial;">Project Setting Viewer (CapStart)</span></a></h3>
     <h3><span style="font-family: Arial;">Job Monitoring (CapJob)</span></h3>
     <h3><span style="font-family: Arial;">MDB Creator</span></h3>
     <h2><span style="font-family: Arial;">SDLC</span></h2>
     <h3><span style="font-family: Arial;">TR 29110-5-1-1</span></h3>
     <h2><span style="font-family: Arial;">Best Practices</span></h2>
-    <ul><span style="font-family: Arial;">Software Documentation</span></ul>
-    <ul><span style="font-family: Arial;">CI/CD</span></ul>
-    <ul><span style="font-family: Arial;">Security</span></ul>
+    <ul>
+      <span style="font-family: Arial;">Software Documentation</span>
+    </ul>
+    <ul>
+      <span style="font-family: Arial;">CI/CD</span>
+    </ul>
+    <ul>
+      <span style="font-family: Arial;">Security</span>
+    </ul>
     <h2><span style="font-family: Arial;">Stakeholder Satisfaction</span></h2>
     <h3><span style="font-family: Arial;">Survey</span></h3>
-    
   </body>
 </html>
