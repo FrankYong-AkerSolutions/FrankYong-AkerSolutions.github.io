@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="13.96" multi-file="no" uid="simp2dfb4ef9333b44b1a68b0fcf0e098412">
+  <meta>
+    <name>Site</name>
+    <authors>Frank Yong</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="ui-web-browser" type="Web Browser" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-titled-panel" type="Titled Panel" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-tree" type="Tree" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-accordion-menu" type="Accordion Menu" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-breadcrumbs" type="Breadcrumbs" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-button-group" type="Button Group" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-area" type="Area" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="ui-web-browser" type="Web Browser" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-titled-panel" type="Titled Panel" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-tree" type="Tree" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-accordion-menu" type="Accordion Menu" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-breadcrumbs" type="Breadcrumbs" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-button-group" type="Button Group" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-area" type="Area" />
+        <value>3</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.Wireframing.WebPageDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-63ff20cebc514531a7705da2df71d0c9" name="" task-id-sequence="0">
+    <persons>
+      <person id="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF">
+        <first-name>Frank</first-name>
+        <last-name>Yong</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-bae639cd6439470192fa54ed94243062" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types />
+    </custom-types>
+  </types>
+  <items />
+  <models>
+    <model id="p2db22d86e55240a3a26ab8e6c92c18d2_438051122" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>08/05/2023 08:48:12</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="web-page" id="p5fbe192b7f8d4e5fa03536cfab68c307_375010045" name="WebPageDiagram1" order-index="1" uid="" auto-routed-paths="false" default-line-style="default" view-location="0,-18">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>08/05/2023 08:48:12</creation-date>
+          <change-date>08/05/2023 08:55:17</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="ed5294e3c3634df7a4de897477ef3f20" cid="TP001" type="ui-titled-panel" name="TitledPanel1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:48:46" />
+          <item id="d579096cc3d94898bc9500de09f99b3f" cid="BC001" type="ui-breadcrumbs" name="Breadcrumbs1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:52:32">
+            <breadcrumbs>
+              <items>
+                <item>Root</item>
+                <item>Section</item>
+                <item>Sub-Section</item>
+                <item>Page</item>
+              </items>
+            </breadcrumbs>
+          </item>
+          <item id="32b0544b38fb4311a15dbf26616df207" cid="AM001" type="ui-accordion-menu" name="AccordionMenu1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:50:10">
+            <accordion-menu>
+              <nodes>
+                <node uid="tn9f04e9a346e84af195b22559ddb55255638268222103022296" name="Item1">
+                  <sub-nodes>
+                    <node uid="tna40b1328cf6c44f59777de245bef2d45638268222103022296" name="SubItem1" />
+                    <node uid="tn1971ca0310274ac4bb87f1d19fe3dca1638268222103022296" name="SubItem2" />
+                    <node uid="tn28859ea15a8648348eb963ab35141574638268222103022296" name="SubItem3" />
+                  </sub-nodes>
+                </node>
+                <node uid="tna4e1182d3ad94c1ca2caec763991f3a7638268222103022296" name="Item2" />
+                <node uid="tn687e51aa8c524453a98fe0d8587eadfd638268222103022296" name="Item3" />
+              </nodes>
+            </accordion-menu>
+          </item>
+          <item id="e0a2397e4ac346489992b9f2c0f70524" cid="ELEM001" type="ui-tree" name="Tree1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:49:45">
+            <tree>
+              <node uid="tna80f0b2e784b47dca73a879f5c4bc3a5638268221859311394" name="Root">
+                <sub-nodes>
+                  <node uid="tnb7fab70d475b43d6a6f1546eed6f771f638268221859311394" name="Node 1" />
+                  <node uid="tn8ba30852262149209a4689d141350571638268221859311394" name="Node 2">
+                    <sub-nodes>
+                      <node uid="tnabf118cb10ea40edb2916d9e854a04af638268221859311394" name="Subnode 2.1" />
+                      <node uid="tnb32f51ceba0741c291982539a7903a84638268221859311394" name="Subnode 2.2" />
+                      <node uid="tn9c9864dd218e40d2b4469192ecfe98da638268221859311394" name="Subnode 2.3" />
+                    </sub-nodes>
+                  </node>
+                  <node uid="tn2e8e433e177d429fbc3c36de60575052638268221859311394" name="Node 3">
+                    <sub-nodes>
+                      <node uid="tn16521d154f2a4ab2b7be5fa359328d51638268221859311394" name="Subnode 3.1" />
+                      <node uid="tnc323be7000c448ce82498244e7d4ab00638268221859311394" name="Subnode 3.2" />
+                      <node uid="tn25b1a163c18946ce8f0b4c046a185017638268221859311394" name="Subnode 3.3" />
+                    </sub-nodes>
+                  </node>
+                </sub-nodes>
+              </node>
+            </tree>
+          </item>
+          <item id="ab8863aded90471989095399bf7bf026" cid="BG001" type="ui-button-group" name="ButtonGroup1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:53:37">
+            <button-group>
+              <items>
+                <item>Tools</item>
+                <item>Batch Jobs</item>
+                <item>Project Settings</item>
+                <item>Development Projects</item>
+                <item>SDLC</item>
+                <item>Best Practices</item>
+              </items>
+            </button-group>
+          </item>
+          <item id="9b36bab28eef462e8c525af69a29c77d" cid="ELEM002" type="ui-area" name="Area1" creator="CDoZfQE0eoPT0twKUywpAx3kxcz2Adk/NiphoWlrgSI8uGVF" creation-date="08/05/2023 08:55:17" />
+        </abstract-items>
+        <layer id="7a62c13e571d472387b105031ee965b8" name="Default" visible="true" enabled="true" locked="false">
+          <item id="32b0544b38fb4311a15dbf26616df207" iid="519aa72ab90d4235be161530883bf9d1" creation-date="08/05/2023 08:50:10" order-index="2" type="ui-accordion-menu">
+            <layout ax="61" ay="136" awidth="115" aheight="306" x="61" y="136" width="115" height="306" rotation-center="12.5,-112" />
+          </item>
+          <item id="d579096cc3d94898bc9500de09f99b3f" iid="3e9351c6bcaa4f37b1fa48210fabfca9" creation-date="08/05/2023 08:52:32" order-index="3" type="ui-breadcrumbs">
+            <layout ax="198" ay="136" awidth="441" aheight="30" x="198" y="136" width="441" height="30" rotation-center="8.5,0" />
+          </item>
+          <item id="ab8863aded90471989095399bf7bf026" iid="de5c71ad8f49429c98a035a9e65fd3d5" creation-date="08/05/2023 08:53:37" order-index="4" type="ui-button-group">
+            <layout ax="61" ay="83" awidth="578" aheight="30" x="62" y="83" width="578" height="30" rotation-center="-114,0" />
+          </item>
+          <item id="9b36bab28eef462e8c525af69a29c77d" iid="045394f6f6a44f49822344b2ef172bce" creation-date="08/05/2023 08:55:17" order-index="5" type="ui-area">
+            <layout ax="198" ay="189" awidth="441" aheight="253" x="198" y="189" width="441" height="253" rotation-center="-91.5,-51.5" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
