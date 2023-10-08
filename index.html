@@ -1,62 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CapTools</title>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-  </head>
-  <body bgcolor="#0000FF">
-    <h1 role="heading">Cap Tools Documentation</h1>
+<html lanf="en">
+    <head>
+        <meta content="tezt/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+    </head>
+    <body>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <script>
+            var ballX = 75, ballY = 75;
+            var ballSpeedX = 6, ballSpeedY = 6;
+            var paddle1Y = 0, paddle2Y = 0;
+            const PADDLE_HEIGHT = 100;
+            const PADDLE_WIDTH = 10;
+            var canvas;
+            var canvasContext;
 
-    <table cellspacing="0" cellpadding="1" border="0" width="100%">
-      <tr>
-        <td>
-          <table cellspacing="0" cellpadding="1" border="0" width="100%" style="font-family: Helvetica,Arial,sans-serif;">
-            <!-- Sections Menu -->
-            <tr valign="top">
-              <td width="16%"><a href="index.html">Tools</a></td>
-              <td width="16%"><a href="batchJobs.html">Batch Jobs</a></td>
-              <td width="16%"><a href="projectSettings.html">Project Settings</a></td>
-              <td width="16%"><a href="developmentProjects.html">Development Projects</a></td>
-              <td width="16%"><a href="sdlc.html">SDLC</a></td>
-              <td width="16%"><a href="bestPractices.html">Best Practices</a></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr><td>
-        <table cellspacing="0" cellpadding="1" border="0" width="100%">
-          <tr><td>
-            <table cellspacing="0" cellpadding="1" border="0" width="100%">
-              <tr>
-                <!-- Sidebar Menu -->
-                <td valign="top" width="100px">
-                  <table cellspacing="0" cellpadding="1" border="0" width="100%" style="font-family: Helvetica,Arial,sans-serif;">
-                    <tr><td colspan="3"><b>Tools Documentation</b></td></tr>
-                    <tr><td>&nbsp;</td><td colspan="2">CapDocSystem</td></tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td><td>SOW</td></tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td><td>Requirements</td></tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td><td>Implemetation</td></tr>
-                    <tr><td>&nbsp;</td><td colspan="2">SubItem 2</td></tr>
-                    <tr><td>&nbsp;</td><td colspan="2">SubItem 3</td></tr>
-                    <tr><td colspan="3"><b>Item 2</b></td></tr>
-                  </table>
-                </td>
-                <td valign="top">
-                  <table cellspacing="0" cellpadding="1" border="0" width="100%">
-                    <!-- Breadcrumbs -->
-                    <tr><td style="font-family: Helvetica,Arial,sans-serif;"><b>Root -&gt; Site -&gt; Section -&gt; Page</b></td></tr>
-                    <!-- Page Contents-->
-                    <tr><td style="font-family: Helvetica,Arial,sans-serif;">Export to 2D DGN and import into MIPS</td></tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </td></tr>
-        </table>
-      </td></tr>
-    </table>
-  </body>
+            window.onload = function() {
+                // save the canvas for dimensions, and its 2d context for drawing to it
+                canvas = document.getElementById('gameCanvas');
+                canvasContext = canvas.getContext('2d');
+
+                ballReset();
+                paddle1Y = (canvas.height - PADDLE_HEIGHT)/2;
+                paddle2Y = (canvas.height - PADDLE_HEIGHT)/2;
+
+                var framedPerSecond = 30;
+                setInterval(function() {
+                    moveEverything();
+                    drawEverything();
+                }, 1000/framedPerSecond);
+
+                canvas.addEventListener('mousemove', function(evt){
+                    var mousePos = calculateMousePos(evt);
+                    paddle1Y = mousePos.y - (PADDLE_HEIGHT/2) // minus half height to center it
+
+                    // Use this when playing with yourself
+                    // paddle2Y = mousePos.x - (PADDLE_HEIGHT/2) // minus half height to center it
+
+                });
+            }
+
+            function moveEverything() {
+                if (ballX < 0) { // if ball has moved beyond the left edge
+                    if (ballY > paddle1Y && ballY < paddle1Y+PADDLE_HEIGHT) {
+                        ballSpeedX *= -1;
+                    } else {
+                        ballReset();
+                    }
+                    
+                } else if (ballX > canvas.width) {
+                    if (ballY > paddle2Y && ballY < paddle2Y+PADDLE_HEIGHT) {
+                        ballSpeedX *= -1;
+                    } else {
+                        ballResetLeft();
+                    }
+                    
+                }
+                
+                if (ballY < 0 || ballY > canvas.height) {
+                    ballSpeedY *= -1;
+                }
+
+                ballX += ballSpeedX; // Move the ball horizontaly with small increments
+                ballY += ballSpeedY; // Move the ball verticaly with small increments
+
+                // Computer player
+                paddle2Y = ballY - (PADDLE_HEIGHT/2);
+                }
+
+            function ballReset() {
+                ballX = canvas.width / 2;
+                //ballY = canvas.height / 2;
+                ballSpeedX = 6;
+                ballSpeedY = -3;
+            }
+
+            function ballResetLeft()
+            {
+                ballReset();
+                ballSpeedX *= -1;
+            }
+
+
+            function colorRect(topleftX, topLeftY, boxWidth, boxHeight, fillColor) {
+                // Draw a rectengle
+                canvasContext.fillStyle = fillColor;
+                canvasContext.fillRect(topleftX,topLeftY, boxWidth, boxHeight);
+            }
+
+            function colorCircle(centerX, centerY, radius, fillColor) {
+                // drawa a circle
+                canvasContext.fillStyle = fillColor;
+                canvasContext.beginPath();
+                canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
+                canvasContext.fill();
+            }
+
+            function calculateMousePos(evt) {
+                var rect = canvas.getBoundingClientRect(), root = document.documentElement;
+
+                // Account for the margins, canvas position on page, scroll amount, etc.
+                var mouseX = evt.clientX - rect.left - root.scrollLeft;
+                var mouseY = evt.clientY - rect.top - root.scrollTop;
+
+                return {
+                    x: mouseX,
+                    y: mouseY
+                };
+            }
+
+            function drawEverything() {
+                // Clear the game view by filling in with black
+                colorRect(0, 0, canvas.width, canvas.height, 'black')
+
+                // Draw the paddles
+                colorRect(0, paddle1Y, PADDLE_WIDTH, PADDLE_HEIGHT, 'red');
+                colorRect(canvas.width-PADDLE_WIDTH, paddle2Y, PADDLE_WIDTH, PADDLE_HEIGHT, 'blue');
+
+                // Draw the ball
+                colorCircle(ballX, ballY, 10, 'yellow');
+            }
+        </script>
+    </body>
 </html>
