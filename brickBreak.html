@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-        <meta content="utf-8" http-equiv="encoding">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-equiv="encoding" content="utf-8">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
     </head>
     <body>
 	    <p>Touchmove using changedTouches</p>
+	    <p>nocache</p>
         <canvas id="gameCanvas" width="800" height="400"></canvas>
 
 <script>
@@ -36,8 +39,7 @@
 
             var touches = evt.changedTouches;
             for (let i = 0; i < touches.length; i++) {
-                paddleX = touches[i].pageX;
-                colorText("Changed touches[" + i + "]: " + paddleX, 100, canvas.height-50, 'white')
+                paddleX = touches[i].pageX-(PADDLE_WIDTH/2);
             }
         });
 
