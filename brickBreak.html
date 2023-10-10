@@ -29,15 +29,20 @@
             drawEverything();
         }, 1000/framesPerSecond);
 
-		canvas.addEventListener('mousedown', function(evt) {
+		// canvas.addEventListener('mousedown', function(evt) {
+        //     var mousePos = calculateMousePos(evt);
+        //     paddleX = mousePos.x-(PADDLE_WIDTH/2);
+        // });
+
+		canvas.addEventListener('mouseover', function(evt) {
             var mousePos = calculateMousePos(evt);
             paddleX = mousePos.x-(PADDLE_WIDTH/2);
         });
 
-        canvas.addEventListener('mousemove', function(evt) {
-            var mousePos = calculateMousePos(evt);
-            paddleX = mousePos.x-(PADDLE_WIDTH/2);
-	    });
+        // canvas.addEventListener('mousemove', function(evt) {
+        //     var mousePos = calculateMousePos(evt);
+        //     paddleX = mousePos.x-(PADDLE_WIDTH/2);
+	    // });
     }
 	
     function moveEverything() {
