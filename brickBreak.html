@@ -29,20 +29,15 @@
             drawEverything();
         }, 1000/framesPerSecond);
 
-		// canvas.addEventListener('mousedown', function(evt) {
-        //     var mousePos = calculateMousePos(evt);
-        //     paddleX = mousePos.x-(PADDLE_WIDTH/2);
-        // });
-
-		canvas.addEventListener('mouseover', function(evt) {
+		canvas.addEventListener('touchmove', function(evt) {
             var mousePos = calculateMousePos(evt);
             paddleX = mousePos.x-(PADDLE_WIDTH/2);
         });
 
-        // canvas.addEventListener('mousemove', function(evt) {
-        //     var mousePos = calculateMousePos(evt);
-        //     paddleX = mousePos.x-(PADDLE_WIDTH/2);
-	    // });
+        canvas.addEventListener('mousemove', function(evt) {
+            var mousePos = calculateMousePos(evt);
+            paddleX = mousePos.x-(PADDLE_WIDTH/2);
+	    });
     }
 	
     function moveEverything() {
@@ -73,6 +68,7 @@
 
         colorRect(paddleX, canvas.height-PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, 'white')
         colorCircle(ballX, ballY, 10, 'white');
+        colorText("PaddleX: " + paddleX, 100, canvas.height-100, 'white');
     }
 
     function ballReset() {
@@ -102,6 +98,13 @@
         canvasContext.beginPath();
         canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
         canvasContext.fill();
+    }
+
+    function colorText(showWords, textX, textY, fillColor) {
+        canvasContext.fillStyle = fillColor;
+        canvasContext.textAlign = 'left';
+        canvasContext.textBaseline = 'top';
+        canvasContext.fillText(showWords, textX, textY);
     }
 
 </script>
