@@ -5,7 +5,7 @@
         <meta content="utf-8" http-equiv="encoding">
     </head>
     <body>
-	    <p>Touchmove</p>
+	    <p>Touchmove using changedTouches</p>
         <canvas id="gameCanvas" width="800" height="400"></canvas>
 
 <script>
@@ -31,8 +31,14 @@
         }, 1000/framesPerSecond);
 
 		canvas.addEventListener('touchmove', function(evt) {
-            var mousePos = calculateMousePos(evt);
-            paddleX = mousePos.x-(PADDLE_WIDTH/2);
+            // var mousePos = calculateMousePos(evt);
+            // paddleX = mousePos.x-(PADDLE_WIDTH/2);
+
+            var touches = evt.changedTouches;
+            for (let i = 0; i < touches.length; i++) {
+                paddleX = touches[i].pageX;
+                colorText("Changed touches[" + i + "]: " + paddleX, 100, canvas.height-50, 'white')
+            }
         });
 
         canvas.addEventListener('mousemove', function(evt) {
